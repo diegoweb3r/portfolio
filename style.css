@@ -246,7 +246,7 @@ nav{
 }
 
 .titulo{
-    flex: 0 0 50%;
+   margin-bottom: 1rem;
 }
 
 .titulo h2{
@@ -260,7 +260,6 @@ nav{
     font-weight: 300;
     font-size: 0.9rem;
 }
-
 
 .sobre-descrição{
     flex: 0 0 50%;
@@ -324,7 +323,6 @@ nav{
 
 
 /* Projetos */
-
 .projetos-container{
     display: flex;
     flex-direction: column;
@@ -474,31 +472,22 @@ nav{
 .formacao-container{
     display: flex;
     gap: 2rem;
-}
- 
+} 
+
 .formacao-cards{
     border: 1px solid var(--muted-foreground);
     border-radius: 1rem;
     padding: 1rem;
     flex: 1;
     transition: ease-in-out 0.2s;
-
     position: relative;
-
     width: 280px;
-
     padding: 2rem;
-
     border-radius: 2rem;
-
     background: rgba(255,255,255,0.55);
-
     border: 1px solid rgba(58,138,91,.08);
-
     backdrop-filter: blur(14px);
-
     overflow: hidden;
-
     transition:
         transform .45s ease,
         border-color .45s ease,
@@ -623,18 +612,23 @@ nav{
     align-items: center;
     text-align: center;
     margin-top: 2rem;
+  
 }
+
 
 .contato-container{
     display: flex;
     gap: 1rem;
     margin-top: 2rem;
     justify-content: center;
+
+    
 }
 
 .contato-container img{
     width: 2rem;
     transition: ease-in-out 0.2s;
+
 }
 
 .contato-container img:hover{
