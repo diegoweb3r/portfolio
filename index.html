@@ -15,7 +15,7 @@
   </head>
   <body>
     <header>
-      <nav>
+      <nav aria-label="Menu Principal">
         <div class="logo">
           <span class="circulo-logo">●</span>
           <p class="logo-texto">
@@ -41,22 +41,18 @@
           </ul>
         </div>
 
-        <div class="modo">
-          <img
-            src="./assets/sun.png"
-            alt="simbolo de sol para alteração de modo"
-          />
-        </div>
+        <button class="botao-modo">
+          <img src="./assets/sun.png" alt="Alternar para modo escuro"/>
+        </button>
       </nav>
     </header>
 
     <section id="hero">
       <div class="hero-box">
-        <img src="./assets/brilho.png" alt="icone de bilho" />
-        <p>Disponivel para novos projetos</p>
+        <img src="./assets/brilho.png" alt="" aria-hidden="true" />
+        <p>Disponível para novos projetos</p>
       </div>
-      <h1>
-        Construindo <br />
+      <h1>Construindo <br />
         <span class="destaque">experiências digitais</span><br />
         com propósito
       </h1>
@@ -67,7 +63,7 @@
       </p>
       <div class="cta">
         <a href="#projetos"
-          >Ver projetos <img src="./assets/seta-para-baixo.png" alt=""
+          >Ver projetos <img src="./assets/seta-para-baixo.png" alt="" aria-hidden="true"
         /></a>
         <a href="#contato">Entre em contato</a>
       </div>
@@ -75,8 +71,8 @@
 
     <section id="sobre">
       <div class="titulo">
-        <p>— Sobre</p>
-        <h2>Desing moderno, código elegante</h2>
+        <p class-"subtitulo" aria-hidden="true">— Sobre</p>
+        <h2>Design moderno, código elegante</h2>
       </div>
 
       <div class="sobre-descricao">
@@ -105,9 +101,9 @@
       </div>
       <div class="projetos-container">
         <div class="projetos-card">
-          <img src="./assets/vacinei.png" alt="" />
+          <img src="./assets/vacinei.png" alt="Interface do aplicativo Vacinei exibindo a carteira de vacinação digital" />
           <div class="projeto-detalhes">
-            <h2>Vacinei</h2>
+            <h3>Vacinei</h3>
             <p>Carteira de vacinação</p>
             <div class="projeto-stack">
               <ul>
@@ -119,16 +115,14 @@
             </div>
           </div>
           <div class="projetos-links">
-            <a href=""><img src="./assets/github.png" alt="" /></a>
-            <a href=""
-              ><img src="./assets/seta-para-baixo.png" alt="" class="link"
-            /></a>
+            <a a href="https://github.com/diegoweb3r/vacinei" target="_blank" rel="noopener noreferrer" aria-label="Ver repositório do Vacinei no GitHub"><img src="./assets/github.png" alt=""  aria-hidden="true"/></a>
+            <a href="#" aria-label="Visitar o site do Vacinei"><img src="./assets/seta-para-baixo.png" alt="" class="link" aria-hidden="true"/></a>
           </div>
         </div>
         <div class="projetos-card">
-          <img src="./assets/RENATA.png" alt="" />
+          <img src="./assets/Renata.png" alt="" />
           <div class="projeto-detalhes">
-            <h2>Renata Weber</h2>
+            <h3>Renata Weber</h3>
             <p>Site portfólio</p>
             <div class="projeto-stack">
               <ul>
@@ -157,18 +151,18 @@
 
       <div class="formacao-container">
         <div class="formacao-cards">
-          <img src="./assets/livro.png" alt="" />
-          <h2>Analise e Desenvolvimento de Sistema</h2>
+          <img src="./assets/livro.png" alt="" aria-hidden="true"/>
+          <h3>Graduação - Análise e Desenvolvimento de Sistemas</h3>
           <p>IBMR</p>
         </div>
         <div class="formacao-cards">
-          <img src="./assets/pos-graduacao-virtual.png" alt="" />
-          <h2>UX/UI</h2>
+          <img src="./assets/pos-graduacao-virtual.png" alt="" aria-hidden="true"/>
+          <h3>Pós-Graduação - UX/UI</h3>
           <p>IBMR</p>
         </div>
         <div class="formacao-cards">
-          <img src="./assets/pos-graduacao-virtual.png" alt="" />
-          <h2>Itenligência Artificial</h2>
+          <img src="./assets/pos-graduacao-virtual.png" alt="" aria-hidden="true"/>
+          <h3>Pós-Graduação: - Inteligência Artificial</h3>
           <p>IBMR</p>
         </div>
       </div>
@@ -183,11 +177,9 @@
           como posso ajudar.
         </p>
         <div class="contato-container">
-          <a href="https://github.com/diegoweb3r"
-            ><img src="./assets/github.png" alt="Github logo"
+          <a href="https://github.com/diegoweb3r" target="_blank" rel="noopener noreferrer" aria-label="Acessar meu perfil do GitHub"><img src="./assets/github.png" alt="Github logo"
           /></a>
-          <a href="https://www.linkedin.com/in/diego-weber-474a5aa6/"
-            ><img src="./assets/linkedin.png" alt="linkedin logo"
+          <a href="https://www.linkedin.com/in/diego-weber-474a5aa6/" target="_blank" rel="noopener noreferrer" aria-label="Conectar no LinkedIn"><img src="./assets/linkedin.png" alt="linkedin logo"
           /></a>
         </div>
       </div>

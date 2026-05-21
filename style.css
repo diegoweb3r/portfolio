@@ -135,12 +135,14 @@ nav{
     color: var(--primary-glow);
 }
 
-.modo img{
+.botao-modo img{
     width: 2rem;
     transition: ease-in-out 0.2s;
 }
 
-.modo img:hover{
+.botao-modo img:hover,
+.projetos-card a img:hover,
+.contato-container img:hover{
     cursor: pointer;
         filter: brightness(0) saturate(100%) 
           invert(48%) sepia(79%) 
@@ -225,15 +227,6 @@ nav{
     transform: scale(1.05) rotate(-1deg);
 }
 
-.cta::before{
-    content: "";
-    transition: ease-in-out 0.2s;
-    width: 11rem;
-    height: 3.3rem;
-    border-radius: 1rem;
-    position: absolute;
-    z-index: -1;
-}
 
 /* Sobre */
 #sobre{
@@ -261,7 +254,7 @@ nav{
     font-size: 0.9rem;
 }
 
-.sobre-descrição{
+.sobre-descricao{
     flex: 0 0 50%;
 }
 
@@ -271,13 +264,6 @@ nav{
     color: var(--muted-foreground);
 }
 
-.titulo p{
-    color: var(--primary);
-    text-transform: uppercase;
-    letter-spacing: 0.2rem;
-    font-weight: 300;
-    font-size: 0.9rem;
-}
 
 .sobre-stack ul{
     padding: 0 3.5rem;
@@ -287,12 +273,6 @@ nav{
 }
 
 .sobre-stack ul li{
-    color: var(--primary-glow);
-    border: 1px solid var(--primary);
-    padding: 0.4rem;
-    border-radius: 0.8rem;
-    font-size: 0.8rem;
-    font-weight: 200;
     padding: .6rem 1rem;
     background: rgba(255, 255, 255, 0.35);
     border: 1px solid rgba(58, 138, 91, 0.18);
@@ -404,7 +384,7 @@ nav{
     flex-direction: column;
 }
 
-.projeto-detalhes h2{
+.projeto-detalhes h3{
     font-weight: 800;
 }
 .projeto-detalhes p{
@@ -450,11 +430,7 @@ nav{
     margin-right: 1rem;
     transition: ease-in-out 0.2s;
 }
-.projetos-card a img:hover{
-    filter: brightness(0) saturate(100%) 
-          invert(48%) sepia(79%) 
-          saturate(300%) hue-rotate(120deg);
-}
+
 
 .projetos-links a:nth-child(2) img{
     transform: rotate(225deg);
@@ -564,13 +540,13 @@ nav{
 .formacao-cards:hover::after{
     opacity: 1;
 }
-.formacao-cards h2{
+.formacao-cards h3{
        transition:
         color .3s ease,
         transform .3s ease;
 }
 
-.formacao-cards:hover h2{
+.formacao-cards:hover h3{
     color: var(--primary);
 
     transform: translateY(-2px);
@@ -615,7 +591,6 @@ nav{
   
 }
 
-
 .contato-container{
     display: flex;
     gap: 1rem;
@@ -631,12 +606,6 @@ nav{
 
 }
 
-.contato-container img:hover{
-    cursor: pointer;
-    filter: brightness(0) saturate(100%) 
-          invert(48%) sepia(79%) 
-          saturate(300%) hue-rotate(120deg);
-}
 
 footer{
     height: 10rem;
@@ -645,6 +614,7 @@ footer{
     color: var(--primary);
     justify-content: center;
 }
+
 
 /* Animações */
 
