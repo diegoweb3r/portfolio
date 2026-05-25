@@ -31,7 +31,9 @@ html{
 body{
     font-family: 'Inter', sans-serif;
     background: var(--background);
-    padding: 0.8rem 15rem;
+    padding: 0.8rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 body::before {
@@ -66,6 +68,8 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .logo{
@@ -82,10 +86,10 @@ nav{
         drop-shadow(0 0 5px var(--primary-glow))
         drop-shadow(0 0 10px var(--primary-glow))
         drop-shadow(0 0 20px var(--primary-glow));
+
+    animation: piscar 1s infinite;
     
-        animation: piscar 1s infinite;
-    
-    }
+}
 
 .logo-texto{
     font-weight: 700;
@@ -149,6 +153,13 @@ nav{
           saturate(300%) hue-rotate(120deg);
 }
 
+#menu-check, 
+.checkbox,
+.menu-toggle{
+    display: none;
+}
+
+
 /* Hero */
 
 #hero{
@@ -180,9 +191,9 @@ nav{
 }
 
 #hero h1{
-    font-size: 6rem;
+    font-size: clamp(2.5rem, 8vw, 6rem);
     font-weight: 900 ;
-    line-height: 6rem;
+    line-height: 1.1;
 }
 
 .texto-descricao{
@@ -231,10 +242,10 @@ nav{
 /* Sobre */
 #sobre{
     width: 100%;
-    height: 50vh;
+    min-height: 50vh;
     display: flex;
-    justify-content:space-between;
-    align-items: center;
+    gap: 2rem;
+    align-items: flex-start;
     
 }
 
@@ -255,19 +266,18 @@ nav{
 }
 
 .sobre-descricao{
-    flex: 0 0 50%;
+    width: 100%;
 }
 
-.sobre-descricao p{
+.sobre-descricao p,
+.sobre-stack ul{
     padding: 0 3.5rem;
     text-align: justify;
     color: var(--muted-foreground);
+    margin: 1rem 0;
 }
 
-
 .sobre-stack ul{
-    padding: 0 3.5rem;
-    margin: 1rem;
     display: flex;
     gap: 2rem;   
 }
@@ -311,15 +321,12 @@ nav{
 
 .projetos-card{
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
     border-top: 1px solid var(--border);
-    padding: 1rem 0;
+    padding: 1.5rem 0;
     border-bottom: 1px solid var(--border);
-
-     overflow: hidden;
-
+    overflow: hidden;
     backdrop-filter: blur(14px);
-
     transition:
         transform .45s ease,
         border-color .45s ease,
@@ -330,21 +337,16 @@ nav{
 
 .projetos-card::before{
     content: "";
-
     position: absolute;
     inset: 0;
-
     background:
         radial-gradient(
             circle at top right,
             rgba(110, 184, 130, 0.18),
             transparent 45%
         );
-
     opacity: 0;
-
     transition: opacity .45s ease;
-
     pointer-events: none;
 }
 
@@ -365,9 +367,9 @@ nav{
     opacity: 1;
 }
 
-
 .projetos-card img{
-    width: 15rem;
+    width: 100%;
+    max-width: 15rem;
     border-radius: 1rem;
       transition:
         transform .6s ease,
@@ -387,6 +389,7 @@ nav{
 .projeto-detalhes h3{
     font-weight: 800;
 }
+
 .projeto-detalhes p{
     font-weight: 300;
 }
@@ -411,8 +414,6 @@ nav{
     display: flex;
 }
 
-
-
 .projetos-card:hover .projetos-links a{
     opacity: 1;
 
@@ -431,7 +432,6 @@ nav{
     transition: ease-in-out 0.2s;
 }
 
-
 .projetos-links a:nth-child(2) img{
     transform: rotate(225deg);
 }
@@ -439,15 +439,16 @@ nav{
 /* Formação */
 #formacao{
     margin-top: 2rem;
-    height: 50vh;
+    min-height: 50vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .formacao-container{
-    display: flex;
-    gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
 } 
 
 .formacao-cards{
@@ -457,7 +458,7 @@ nav{
     flex: 1;
     transition: ease-in-out 0.2s;
     position: relative;
-    width: 280px;
+    width: 100%;
     padding: 2rem;
     border-radius: 2rem;
     background: rgba(255,255,255,0.55);
@@ -479,30 +480,23 @@ nav{
 
 .formacao-cards::before{
     content: "";
-
     position: absolute;
-
     top: 0;
     left: 50%;
-
     transform: translateX(-50%);
-
     width: 0%;
     height: 2px;
-
     background: linear-gradient(
         90deg,
         transparent,
         var(--primary-glow),
         transparent
     );
-
     transition: width .5s ease;
 }
 
 .formacao-cards::after{
     content: "";
-
     position: absolute;
     inset: 0;
 
@@ -513,9 +507,7 @@ nav{
         );
 
     opacity: 0;
-
     transition: opacity .5s ease;
-
     pointer-events: none;
 }
 
@@ -523,11 +515,8 @@ nav{
     transform:
         translateY(-8px)
         scale(1.01);
-
     border-color: rgba(110,184,130,.2);
-
     background: rgba(255,255,255,0.72);
-
     box-shadow:
         0 15px 40px rgba(0,0,0,.06),
         0 0 25px rgba(110,184,130,.08);
@@ -579,7 +568,6 @@ nav{
 }
 
 /* Contato */
-
 #contato{
     display: flex;
     height: 20rem;
@@ -588,7 +576,6 @@ nav{
     align-items: center;
     text-align: center;
     margin-top: 2rem;
-  
 }
 
 .contato-container{
@@ -596,16 +583,12 @@ nav{
     gap: 1rem;
     margin-top: 2rem;
     justify-content: center;
-
-    
 }
 
 .contato-container img{
     width: 2rem;
     transition: ease-in-out 0.2s;
-
 }
-
 
 footer{
     height: 10rem;
@@ -615,6 +598,147 @@ footer{
     justify-content: center;
 }
 
+
+@media (min-width: 768px) {
+  /* No computador, aumentamos o espaçamento lateral */
+  body {
+    padding: 1.5rem 4rem;
+  }
+
+  /* O Hero ganha um pouco mais de respiro */
+  #hero {
+    height: 75vh;
+    justify-content: center;
+    gap: 3rem;
+  }
+
+  /* O Sobre volta a ficar lado a lado */
+  #sobre {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .sobre-descricao {
+    flex: 0 0 50%;
+  }
+
+  /* Os projetos voltam a ficar lado a lado (imagem na esquerda, textos na direita) */
+  .projetos-card {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+/* Media Query */
+@media screen and (max-width: 1000px) {
+
+    body{
+        padding: .5rem;
+    }
+
+    header{
+        justify-content: center;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        position: relative; 
+        padding: 10px 20px;
+    }
+
+    .menu-toggle{
+        display: block;
+        margin-left: auto;
+    }
+  
+    .menu-toggle img{
+        width: 2rem;
+        cursor: pointer;
+    }
+
+    .botao-modo{
+        display: none;
+    }
+
+    .menu-lista{
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        height: 80vh;
+        margin: 0;
+        padding: 1rem;
+        z-index: 10;
+        background: rgba(255, 255, 255, 0.35);
+        border: 1px solid rgba(58, 138, 91, 0.18);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-radius: 2rem;
+
+        box-shadow:
+            0 4px 20px rgba(58, 138, 91, 0.08),
+            inset 0 1px 1px rgba(255,255,255,0.35);
+       
+    }
+
+    .menu-lista ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items:end;
+    }
+
+    .menu-lista li a {
+        display: block;
+        padding: 15px;
+         color: var(--primary);
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: 700;
+    }
+
+    .checkbox:checked ~ .menu-lista {
+        display: block;
+        
+    }
+    
+    .checkbox:checked ~.menu-toggle img{
+         filter: brightness(0) saturate(100%) 
+          invert(48%) sepia(79%) 
+          saturate(300%) hue-rotate(120deg);
+    }
+
+    .cta{
+        flex-direction: column;
+    }
+
+    #sobre{
+        flex-direction: column;
+    }
+
+    .titulo{
+        margin: 0;
+        text-align: center;
+    }
+
+    .sobre-stack ul{
+       flex-direction: column;
+       gap: 0.2rem;
+    }
+
+    .projetos-card{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+}
 
 /* Animações */
 
