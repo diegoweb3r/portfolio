@@ -733,11 +733,28 @@ footer{
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .projeto-stack ul{
+        justify-content: center;
     }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
+    .formacao-container{
+        display: flex;
+        flex-direction: column;
+    }
 
+    .formacao-cards{
+        text-align: center;
+    }
+
+    .formacao-cards img{
+        display: none;
+    }
 }
 
 /* Animações */
