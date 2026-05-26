@@ -4,9 +4,6 @@
   --background: rgb(250, 251, 251);
   --foreground: rgb(48, 52, 60);
 
-  /* Cards */
-  --card: rgb(255, 255, 255);
-
   /* Primary / Accent */
   --primary: rgb(58, 138, 91);
   --primary-glow: rgb(110, 184, 130);
@@ -34,6 +31,7 @@ body{
     padding: 0.8rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    color: var(--foreground);
 }
 
 body::before {
@@ -148,9 +146,7 @@ nav{
 .projetos-card a img:hover,
 .contato-container img:hover{
     cursor: pointer;
-        filter: brightness(0) saturate(100%) 
-          invert(48%) sepia(79%) 
-          saturate(300%) hue-rotate(120deg);
+    filter: brightness(0) saturate(100%) invert(44%) sepia(17%) saturate(1478%) hue-rotate(94deg) brightness(97%) contrast(83%);
 }
 
 #menu-check, 
@@ -185,9 +181,7 @@ nav{
 
 .hero-box img{
     width: 2rem;
-    filter: brightness(0) saturate(100%) 
-        invert(48%) sepia(79%) 
-        saturate(300%) hue-rotate(120deg);
+    filter: brightness(0) saturate(100%) invert(44%) sepia(17%) saturate(1478%) hue-rotate(94deg) brightness(97%) contrast(83%);
 }
 
 #hero h1{
@@ -355,12 +349,8 @@ nav{
         translateY(-8px)
         rotateX(2deg)
         rotateY(-2deg);
-
     border-color: rgba(110, 184, 130, 0.25);
-
-    box-shadow:
-        0 20px 40px rgba(0,0,0,.08),
-        0 0 30px rgba(110,184,130,.08);
+    box-shadow:0 20px 40px rgba(0,0,0,.08), 0 0 30px rgba(110,184,130,.08);
 }
 
 .projetos-card:hover::before{
@@ -416,7 +406,6 @@ nav{
 
 .projetos-card:hover .projetos-links a{
     opacity: 1;
-
     transform: translateY(-2px);
 }
 
@@ -429,7 +418,6 @@ nav{
 .projetos-card a img{
     width: 2.8rem;
     margin-right: 1rem;
-    transition: ease-in-out 0.2s;
 }
 
 .projetos-links a:nth-child(2) img{
@@ -706,9 +694,7 @@ footer{
     }
     
     .checkbox:checked ~.menu-toggle img{
-         filter: brightness(0) saturate(100%) 
-          invert(48%) sepia(79%) 
-          saturate(300%) hue-rotate(120deg);
+        filter: brightness(0) saturate(100%) invert(44%) sepia(17%) saturate(1478%) hue-rotate(94deg) brightness(97%) contrast(83%);
     }
 
     .cta{
