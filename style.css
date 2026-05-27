@@ -17,12 +17,24 @@
 
   /* States */
   --destructive: rgb(204, 50, 38);
+
+    --filtro-icones: brightness(0) saturate(100%) invert(44%) sepia(17%) saturate(1478%) hue-rotate(94deg) brightness(97%) contrast(83%);
+    --img-color: brightness(0) saturate(100%) invert(18%) sepia(11%) saturate(574%) hue-rotate(182deg) brightness(94%) contrast(89%);
+
+  --transicao-modo: background-color 0.3s ease, color 0.3s ease;
+
 }
 
 /* Gerais */
 
 html{
     scroll-behavior: smooth;
+}
+
+html.dark-mode{
+    --background: rgb(48, 52, 60);
+    --foreground: rgb(250, 251, 251);
+    --img-color: brightness(0) saturate(100%) invert(100%) sepia(3%) saturate(1215%) hue-rotate(170deg) brightness(101%) contrast(100%);
 }
 
 body{
@@ -127,7 +139,6 @@ nav{
     gap: 1rem;
     font-weight: 300;
     font-size: 0.9rem;
-    color: var(--foreground);
 }
 
 .menu-lista ul a{
@@ -143,10 +154,22 @@ nav{
 }
 
 .botao-modo img:hover,
-.projetos-card a img:hover,
+.projetos-card a:hover img,
 .contato-container img:hover{
-    cursor: pointer;
-    filter: brightness(0) saturate(100%) invert(44%) sepia(17%) saturate(1478%) hue-rotate(94deg) brightness(97%) contrast(83%);
+    cursor:pointer;
+    filter: var(--filtro-icones) !important;
+    opacity: 1;
+}
+
+.botao-modo img,
+.projetos-links a img, 
+.contato-container img,
+.formacao-container img,
+.hero-box img,
+.menu-toggle img{
+    filter: var(--img-color);
+    transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
+    
 }
 
 #menu-check, 
@@ -188,11 +211,6 @@ nav{
     font-size: clamp(2.5rem, 8vw, 6rem);
     font-weight: 900 ;
     line-height: 1.1;
-}
-
-.texto-descricao{
-    color: var(--muted-foreground);
-
 }
 
 .cta{
@@ -267,7 +285,6 @@ nav{
 .sobre-stack ul{
     padding: 0 3.5rem;
     text-align: justify;
-    color: var(--muted-foreground);
     margin: 1rem 0;
 }
 
@@ -418,6 +435,13 @@ nav{
 .projetos-card a img{
     width: 2.8rem;
     margin-right: 1rem;
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: filter 1s ease, opacity 1s ease;;
+}
+
+html.dark-mode .projetos-card a img{
+    filter: brightness(0) invert(1);
 }
 
 .projetos-links a:nth-child(2) img{
@@ -457,13 +481,21 @@ nav{
         transform .45s ease,
         border-color .45s ease,
         box-shadow .45s ease,
-        background .45s ease;
+        background .45s ease,
+        
 }
 
 .formacao-cards:hover{
     color: var(--primary);
     border: 1px solid var(--primary);
     transform:scale(1.1);
+}
+
+.formacao-cards:hover img{
+    filter: var(--filtro-icones);
+    transform:
+        translateY(-4px)
+        scale(1.08);
 }
 
 .formacao-cards::before{
@@ -531,14 +563,10 @@ nav{
 
 .formacao-cards p{
     font-weight: 200;
-    color: var(--muted-foreground);
 
     transition: color .3s ease;
 }
 
-.formacao-cards:hover p{
-    color: var(--foreground);
-}
 
 #formacao img{
     width: 2rem;
@@ -547,13 +575,6 @@ nav{
         filter .5s ease;
 }
 
-.formacao-cards:hover img{
-    transform:
-        translateY(-4px)
-        scale(1.08);
-
-    filter: drop-shadow(0 8px 12px rgba(110,184,130,.25));
-}
 
 /* Contato */
 #contato{
