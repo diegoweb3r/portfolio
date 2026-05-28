@@ -227,7 +227,28 @@ nav{
     border-radius: 1rem;
     font-weight: 400;
     color: var(--secondary);
-    transition: ease-in 0.2s;
+    transition: 
+        color 250ms ease,
+        box-shadow 250ms ease,
+        transform 200ms ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta a::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--primary-glow);
+    transform: scale(0);
+    transform-origin: center;
+    transition: transform 0.5s ease;
+    border-radius: inherit;
+    z-index: -1;
+}
+
+.cta a:hover::before{
+    transform: scale(1.5);
 }
 
 .cta a:nth-child(1){
@@ -245,9 +266,12 @@ nav{
 }
 
 .cta a:hover{
-    border-radius: 38% 62% 53% 47% / 43% 39% 61% 57%;
-    border: none;
-    transform: scale(1.05) rotate(-1deg);
+    box-shadow:
+        0 0 10px var(--primary-glow),
+        0 0 20px var(--primary-glow),
+        0 0 40px var(--primary-glow);
+        color: var(--secondary);
+
 }
 
 
